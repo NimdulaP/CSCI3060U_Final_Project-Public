@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 data = {
     'accounts': [
@@ -11,6 +11,14 @@ data = {
 
 def homepage(request):
     return HttpResponse("Welcome to the homepage!")
+
+def login(request):
+    if request.method == 'POST':
+        user_type = request.POST.get('user_type')
+        if user_type == 'admin':
+            return redirect('accounts')
+
+    return render(request, 'login/login.html')
 
 def accounts(request):
     return render(request, 'accounts/accounts.html', data)

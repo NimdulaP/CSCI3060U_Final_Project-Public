@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>Welcome to the Login Page</h1>
+
+    <form method="POST", action="{% url 'login' %}">
+        {% csrf_token %}
+        <p><strong>Would you like to log in as an Admin or Standard User?</strong></p>
+
+        <label>
+            <input type="radio" name="user_type" value="admin">
+            Admin
+        </label><br>
+
+        <label>
+            <input type="radio" name="user_type" value="standard">
+            Standard User
+        </label><br>
+
+        <br><button type="submit">Login</button>
+    </form>
+</body>
+</html>
