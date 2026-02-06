@@ -9,8 +9,11 @@ data = {
     ]
 }
 
-def homepage(request):
-    return HttpResponse("Welcome to the homepage!")
+def lockscreen(request):
+    if request.method == 'POST':
+        return redirect('login')
+    
+    return render(request, 'lockscreen/lockscreen.html')
 
 def login(request):
     if request.method == 'POST':
