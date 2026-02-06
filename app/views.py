@@ -9,8 +9,11 @@ data = {
     ]
 }
 
-def homepage(request):
-    return HttpResponse("Welcome to the homepage!")
+def landing_page(request):
+    if request.method == 'POST':
+        return redirect('login')
+    
+    return render(request, 'landing_page/landing_page.html')
 
 def login(request):
     if request.method == 'POST':
