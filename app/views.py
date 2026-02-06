@@ -22,3 +22,6 @@ def login(request):
 
 def accounts(request):
     return render(request, 'accounts/accounts.html', data)
+
+def standardlogin(request):
+    return render(request, 'login/standardlogin.html', data)
