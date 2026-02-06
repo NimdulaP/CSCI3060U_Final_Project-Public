@@ -9,7 +9,7 @@
     <h1>Welcome to the Banking System</h1>
     <p>Please login to access your accounts.</p>
 
-    <form method="POST" action="{% url 'lockscreen' %}">
+    <form method="POST" action="{% url 'landing_page' %}">
         {% csrf_token %}
         <button type="submit">Go to Login Page</button>
     </form>
